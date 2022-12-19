@@ -7,7 +7,7 @@ import axios from 'axios';
 //     }
 // })
 const token = localStorage.getItem('profile')?`Bearer ${JSON.parse(localStorage.getItem('profile')).token}`:null
-const url = 'https://my-diary-back.herokuapp.com/posts'
+const url = 'https://social-media-app-server.vercel.app/posts'
 
 export const fetchposts = ()=>axios.get(url);
 export const createPost=(newPost)=>axios({
@@ -40,7 +40,7 @@ export const likePost = (id)=>axios({
         authorization:token
     }
 })
-const url2='https://my-diary-back.herokuapp.com/users'
+const url2='https://social-media-app-server.vercel.app/users'
 export const signIn = (formData)=>axios({
     url:`${url2}/signin`,
     data:formData,
